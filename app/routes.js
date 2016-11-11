@@ -14,6 +14,9 @@ function getTodos(res) {
 
 module.exports = function (app) {
 
+    app.use('/api/song', require('./api/song'));
+    app.use('/api/playlist', require('./api/playlist'));
+
     // api ---------------------------------------------------------------------
     // get all todos
     app.get('/api/todos', function (req, res) {
@@ -32,7 +35,6 @@ module.exports = function (app) {
             if (err)
                 res.send(err);
 
-            // get and return all the todos after you create another
             getTodos(res);
         });
 

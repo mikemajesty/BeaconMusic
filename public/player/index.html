@@ -26,14 +26,10 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<script src="js/controllers/main.js"></script>
-	<!-- load up our controller -->
-	<script src="js/services/todos.js"></script>
-	<!-- load our todo service -->
+
 	<script src="js/core.js"></script>
-	<!-- load our main application -->
 
 </head>
-<!-- SET THE CONTROLLER -->
 
 <body ng-controller="mainController">
 	<section class="content">
@@ -118,148 +114,21 @@
 
 								<div class="overview__artist">
 
-									<!-- Popular-->
 									<div class="section-title">Proximos</div>
 
 									<div class="tracks">
-
-										<div class="track">
-
+										<div class="track" ng-repeat="song in playlist">
 											<div class="track__art">
-
-												<img src="	" alt="When It's Dark Out" />
-
+												<img ng-src="{{song.image}}" />
 											</div>
 
-											<div class="track__number">1</div>
-
+											<div class="track__number">{{$index + 1}}</div>
 											<div class="track__added">
-
-												<i class="ion-checkmark-round added"></i>
-
+												<i class="{{$index < currentSong ? 'ion-checkmark-round' : ($index == currentSong ? 'fa fa-play' : '')}} added"></i>
 											</div>
-
-											<div class="track__title">Me, Myself & I</div>
-
-											<div class="track__explicit">
-
-
-											</div>
-
-											<div class="track__plays">147,544,165</div>
-
+											<div class="track__title">{{song.name}}</div>
 										</div>
-
-										<div class="track">
-
-											<div class="track__art">
-
-												<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/tth.jpg" alt="These Things Happen" />
-
-											</div>
-
-											<div class="track__number">2</div>
-
-											<div class="track__added">
-
-												<i class="ion-plus not-added"></i>
-
-											</div>
-
-											<div class="track__title">I Mean It</div>
-
-											<div class="track__explicit">
-
-
-											</div>
-
-											<div class="track__plays">74,568,782</div>
-
-										</div>
-
-										<div class="track">
-
-											<div class="track__art">
-
-												<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/whenDarkOut.jpg" alt="When It's Dark Out" />
-
-											</div>
-
-											<div class="track__number">3</div>
-
-											<div class="track__added">
-
-												<i class="ion-checkmark-round added"></i>
-
-											</div>
-
-											<div class="track__title">Calm Down</div>
-
-											<div class="track__explicit">
-
-
-											</div>
-
-											<div class="track__plays">13,737,506</div>
-
-										</div>
-
-										<div class="track">
-
-											<div class="track__art">
-
-												<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/whenDarkOut.jpg" alt="When It's Dark Out" />
-
-											</div>
-
-											<div class="track__number">4</div>
-
-											<div class="track__added">
-
-												<i class="ion-plus not-added"></i>
-
-											</div>
-
-											<div class="track__title">Some Kind Of Drug</div>
-
-											<div class="track__explicit">
-
-
-											</div>
-
-											<div class="track__plays">12,234,881</div>
-
-										</div>
-
-										<div class="track">
-
-											<div class="track__art">
-
-												<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/tth.jpg" alt="These Things Happen" />
-
-											</div>
-
-											<div class="track__number">5</div>
-
-											<div class="track__added">
-
-												<i class="ion-checkmark-round added"></i>
-
-											</div>
-
-											<div class="track__title">Let's Get Lost</div>
-
-											<div class="track__explicit">
-
-
-											</div>
-
-											<div class="track__plays">40,882,954</div>
-
-										</div>
-
 									</div>
-
 								</div>
 
 								<div class="overview__related">
@@ -428,11 +297,6 @@
 							</div>
 
 						</div>
-						<!-- / -->
-
-						<!-- About // Coming Soon-->
-						<!--<div role="tabpanel" class="tab-pane" id="artist-about">About</div>-->
-						<!-- / -->
 
 					</div>
 
@@ -441,57 +305,6 @@
 			</div>
 
 		</div>
-
-		<div class="content__right">
-
-			<div class="social">
-
-				<div class="friends">
-
-					<a href="#" class="friend">
-
-						<i class="ion-android-person"></i> Sam Smith
-
-					</a>
-
-					<a href="#" class="friend">
-
-						<i class="ion-android-person"></i> Tarah Forsyth
-
-					</a>
-
-					<a href="#" class="friend">
-
-						<i class="ion-android-person"></i> Ricahrd Tomkins
-
-					</a>
-
-					<a href="#" class="friend">
-
-						<i class="ion-android-person"></i> Tony Russo
-
-					</a>
-
-					<a href="#" class="friend">
-
-						<i class="ion-android-person"></i> Alyssa Marist
-
-					</a>
-
-					<a href="#" class="friend">
-
-						<i class="ion-android-person"></i> Ron Samson
-
-					</a>
-
-				</div>
-
-				<button class="button-light">Find Friends</button>
-
-			</div>
-
-		</div>
-
 	</section>
 
 	<section class="current-track">
@@ -508,15 +321,22 @@
 
 		<div class="current-track__progress">
 
-			<div class="current-track__progress__start">0:01</div>
+			<div class="current-track__progress__start">{{audio.currentTime}}</div>
 
 			<div class="current-track__progress__bar">
 
-				<div id="song-progress"></div>
+				<div id="song-progress" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
+					<div class="noUi-base">
+						<div class="noUi-origin" style="left: {{audio.progress}}%;">
+							<div class="noUi-handle noUi-handle-lower">
+							</div>
+						</div>
+					</div>
+				</div>
 
 			</div>
 
-			<div class="current-track__progress__finish">3:07</div>
+			<div class="current-track__progress__finish">{{audio.duration}}</div>
 
 		</div>
 
