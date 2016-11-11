@@ -1,0 +1,15 @@
+<ion-view title="Sangue do Bretão">
+  <ion-content class="has-header has-footer">
+    <ion-list can-swipe="listCanSwipe">
+      <ion-item ng-repeat="song in songs" class="item-thumbnail-left">
+        <img ng-src="{{song.image}}">
+        <h2>{{song.name}}</h2>
+        <p>{{song.artist}}</p>
+        <ion-option-button class="button-assertive" ng-click="addSong(song)">
+          Adicionar
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-view>
