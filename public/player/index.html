@@ -44,24 +44,14 @@
 						<div class="profile__img">
 
 							<img src="http://i.giphy.com/PvZ2jLjFofH4Q.gif" alt="Inovação em Cerveja" />
-
 						</div>
-
 						<div class="artist__info__meta">
-
 							<div class="artist__info__name">Tegra Beer</div>
 							<div class="artist__info__type">Inovação em Cerveja</div>
-
-
 							<div class="artist__info__actions">
-
 							</div>
-
 						</div>
-
-
 					</div>
-
 					<div class="artist__listeners">
 
 						<div class="artist__listeners__count">15,662,810</div>
@@ -75,229 +65,111 @@
 						<ul class="nav nav-tabs" role="tablist">
 
 							<li role="presentation" class="active">
-								<a href="#artist-overview" aria-controls="artist-overview" role="tab" data-toggle="tab">PlayList</a>
+								<a aria-controls="artist-overview" role="tab" data-toggle="tab" >PlayList</a>
 							</li>
-							<!--<li role="presentation">
-              <a href="#artist-about" aria-controls="artist-about" role="tab" data-toggle="tab">About</a>
-            </li>-->
+      </ul>
 
-						</ul>
+      <div class="artist__navigation__friends">
 
-						<div class="artist__navigation__friends">
+      	<a href="#">
+      		<img src="https://avatars0.githubusercontent.com/u/16261751?v=3&s=100" alt="" />
+      	</a>
 
-							<a href="#">
-								<img src="https://avatars0.githubusercontent.com/u/16261751?v=3&s=100" alt="" />
-							</a>
+      	<a href="#">
+      		<img src="https://avatars0.githubusercontent.com/u/14138591?v=3&s=100" alt="" />
+      	</a>
 
-							<a href="#">
-								<img src="https://avatars0.githubusercontent.com/u/14138591?v=3&s=100" alt="" />
-							</a>
+      	<a href="#">
+      		<img src="https://avatars0.githubusercontent.com/u/688745?v=3&s=100" alt="" />
+      	</a>
 
-							<a href="#">
-								<img src="https://avatars0.githubusercontent.com/u/688745?v=3&s=100" alt="" />
-							</a>
+      </div>
 
+  </div>
+
+</div>
+
+<div class="artist__content">
+
+	<div class="tab-content">
+
+		<!-- Overview -->
+		<div role="tabpanel" class="tab-pane active" id="artist-overview">
+
+			<div class="overview">
+
+				<div class="overview__artist">
+
+					<div class="section-title">Proximos</div>
+
+					<div class="tracks">
+						<div class="track" ng-repeat="song in playlist">
+							<div class="track__art">
+								<img ng-src="{{song.image}}" />
+							</div>
+
+							<div class="track__number">{{$index + 1}}</div>
+							<div class="track__added">
+								<i class="{{$index < currentSong ? 'ion-checkmark-round' : ($index == currentSong ? 'fa fa-play' : '')}} added"></i>
+							</div>
+							<div class="track__title">{{song.name}}</div>
 						</div>
-
 					</div>
-
 				</div>
 
-				<div class="artist__content">
+				<div class="overview__related">
 
-					<div class="tab-content">
+					<div class="section-title">Participantes</div>
 
-						<!-- Overview -->
-						<div role="tabpanel" class="tab-pane active" id="artist-overview">
+					<div class="related-artists">
 
-							<div class="overview">
+						<a href="#" class="related-artist">
 
-								<div class="overview__artist">
+							<span class="related-artist__img">
 
-									<div class="section-title">Proximos</div>
+								<img src="https://avatars0.githubusercontent.com/u/11630212?v=3&s=100" alt="Mike Lima" />
 
-									<div class="tracks">
-										<div class="track" ng-repeat="song in playlist">
-											<div class="track__art">
-												<img ng-src="{{song.image}}" />
-											</div>
+							</span>
 
-											<div class="track__number">{{$index + 1}}</div>
-											<div class="track__added">
-												<i class="{{$index < currentSong ? 'ion-checkmark-round' : ($index == currentSong ? 'fa fa-play' : '')}} added"></i>
-											</div>
-											<div class="track__title">{{song.name}}</div>
-										</div>
-									</div>
-								</div>
+							<span class="related-artist__name">Mike Lima</span>
 
-								<div class="overview__related">
+						</a>
 
-									<div class="section-title">Participantes</div>
+						<a href="#" class="related-artist">
 
-									<div class="related-artists">
+							<span class="related-artist__img">
 
-										<a href="#" class="related-artist">
+								<img src="https://avatars1.githubusercontent.com/u/9733841?v=3&s=100" alt="Celso Wo" />
 
-											<span class="related-artist__img">
-                    
-                      <img src="https://avatars0.githubusercontent.com/u/11630212?v=3&s=100" alt="Mike Lima" />
-                      
-                    </span>
+							</span>
 
-											<span class="related-artist__name">Mike Lima</span>
+							<span class="related-artist__name">Celso Wo</span>
 
-										</a>
+						</a>
 
-										<a href="#" class="related-artist">
+						<a href="#" class="related-artist">
 
-											<span class="related-artist__img">
-                    
-                      <img src="https://avatars1.githubusercontent.com/u/9733841?v=3&s=100" alt="Celso Wo" />
-                      
-                    </span>
+							<span class="related-artist__img">
 
-											<span class="related-artist__name">Celso Wo</span>
+								<img src="https://s21.postimg.org/jw5dny67b/william.png" alt="William Duque" />
 
-										</a>
+							</span>
 
-										<a href="#" class="related-artist">
+							<span class="related-artist__name">William Duque</span>
 
-											<span class="related-artist__img">
-                    
-                      <img src="https://s21.postimg.org/jw5dny67b/william.png" alt="William Duque" />
-                      
-                    </span>
+						</a>
 
-											<span class="related-artist__name">William Duque</span>
+						<a href="#" class="related-artist">
 
-										</a>
+							<span class="related-artist__img">
 
-										<a href="#" class="related-artist">
+								<img src="https://s11.postimg.org/xm4suz7wj/akuma.jpg" alt="Akuma" />
 
-											<span class="related-artist__img">
-                    
-                      <img src="https://s11.postimg.org/xm4suz7wj/akuma.jpg" alt="Akuma" />
-                      
-                    </span>
+							</span>
 
-											<span class="related-artist__name">Akuma</span>
+							<span class="related-artist__name">Akuma</span>
 
-										</a>
-									</div>
-
-								</div>
-
-							</div>
-
-						</div>
-						<!-- / -->
-
-						<!-- Related Artists -->
-						<div role="tabpanel" class="tab-pane" id="related-artists">
-
-							<div class="media-cards">
-
-								<div class="media-card">
-
-									<div class="media-card__image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/hoodie.jpg);">
-
-										<i class="ion-ios-play"></i>
-
-									</div>
-
-									<a class="media-card__footer">Hoodie Allen</a>
-
-								</div>
-
-								<div class="media-card">
-
-									<div class="media-card__image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/mikestud_large.jpg);">
-
-										<i class="ion-ios-play"></i>
-
-									</div>
-
-									<a class="media-card__footer">Mike Stud</a>
-
-								</div>
-
-								<div class="media-card">
-
-									<div class="media-card__image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/drake_large.jpg);">
-
-										<i class="ion-ios-play"></i>
-
-									</div>
-
-									<a class="media-card__footer">Drake</a>
-
-								</div>
-
-								<div class="media-card">
-
-									<div class="media-card__image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/jcole_large.jpg);">
-
-										<i class="ion-ios-play"></i>
-
-									</div>
-
-									<a class="media-card__footer">J. Cole</a>
-
-								</div>
-
-								<div class="media-card">
-
-									<div class="media-card__image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/bigSean_large.jpg);">
-
-										<i class="ion-ios-play"></i>
-
-									</div>
-
-									<a class="media-card__footer">Big Sean</a>
-
-								</div>
-
-								<div class="media-card">
-
-									<div class="media-card__image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/wiz.jpeg);">
-
-										<i class="ion-ios-play"></i>
-
-									</div>
-
-									<a class="media-card__footer">Wiz Khalifa</a>
-
-								</div>
-
-								<div class="media-card">
-
-									<div class="media-card__image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/yonas.jpg);">
-
-										<i class="ion-ios-play"></i>
-
-									</div>
-
-									<a class="media-card__footer">Yonas</a>
-
-								</div>
-
-								<div class="media-card">
-
-									<div class="media-card__image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/childish.jpg);">
-
-										<i class="ion-ios-play"></i>
-
-									</div>
-
-									<a class="media-card__footer">Childish Gambino</a>
-
-								</div>
-
-							</div>
-
-						</div>
-
+						</a>
 					</div>
 
 				</div>
@@ -305,62 +177,176 @@
 			</div>
 
 		</div>
-	</section>
+		<!-- / -->
 
-	<section class="current-track">
+		<!-- Related Artists -->
+		<div role="tabpanel" class="tab-pane" id="related-artists">
 
-		<div class="current-track__actions">
+			<div class="media-cards">
 
-			<a class="ion-ios-skipbackward"></a>
+				<div class="media-card">
 
-			<a class="ion-ios-play play"></a>
+					<div class="media-card__image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/hoodie.jpg);">
 
-			<a class="ion-ios-skipforward"></a>
+						<i class="ion-ios-play"></i>
 
-		</div>
-
-		<div class="current-track__progress">
-
-			<div class="current-track__progress__start">{{audio.currentTime}}</div>
-
-			<div class="current-track__progress__bar">
-
-				<div id="song-progress" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
-					<div class="noUi-base">
-						<div class="noUi-origin" style="left: {{audio.progress}}%;">
-							<div class="noUi-handle noUi-handle-lower">
-							</div>
-						</div>
 					</div>
+
+					<a class="media-card__footer">Hoodie Allen</a>
+
+				</div>
+
+				<div class="media-card">
+
+					<div class="media-card__image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/mikestud_large.jpg);">
+
+						<i class="ion-ios-play"></i>
+
+					</div>
+
+					<a class="media-card__footer">Mike Stud</a>
+
+				</div>
+
+				<div class="media-card">
+
+					<div class="media-card__image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/drake_large.jpg);">
+
+						<i class="ion-ios-play"></i>
+
+					</div>
+
+					<a class="media-card__footer">Drake</a>
+
+				</div>
+
+				<div class="media-card">
+
+					<div class="media-card__image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/jcole_large.jpg);">
+
+						<i class="ion-ios-play"></i>
+
+					</div>
+
+					<a class="media-card__footer">J. Cole</a>
+
+				</div>
+
+				<div class="media-card">
+
+					<div class="media-card__image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/bigSean_large.jpg);">
+
+						<i class="ion-ios-play"></i>
+
+					</div>
+
+					<a class="media-card__footer">Big Sean</a>
+
+				</div>
+
+				<div class="media-card">
+
+					<div class="media-card__image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/wiz.jpeg);">
+
+						<i class="ion-ios-play"></i>
+
+					</div>
+
+					<a class="media-card__footer">Wiz Khalifa</a>
+
+				</div>
+
+				<div class="media-card">
+
+					<div class="media-card__image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/yonas.jpg);">
+
+						<i class="ion-ios-play"></i>
+
+					</div>
+
+					<a class="media-card__footer">Yonas</a>
+
+				</div>
+
+				<div class="media-card">
+
+					<div class="media-card__image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/childish.jpg);">
+
+						<i class="ion-ios-play"></i>
+
+					</div>
+
+					<a class="media-card__footer">Childish Gambino</a>
+
 				</div>
 
 			</div>
 
-			<div class="current-track__progress__finish">{{audio.duration}}</div>
+		</div>
+
+	</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="current-track">
+
+	<div class="current-track__actions">
+
+		<a class="ion-ios-skipbackward"></a>
+
+		<a id="aplay" class="ion-ios-play play" ng-click="pauseOrPlay()"></a>
+
+		<a class="ion-ios-skipforward"></a>
+
+	</div>
+
+	<div class="current-track__progress">
+
+		<div class="current-track__progress__start">{{audio.currentTime}}</div>
+
+		<div class="current-track__progress__bar">
+
+			<div id="song-progress" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
+				<div class="noUi-base">
+					<div class="noUi-origin" style="left: {{audio.progress}}%;">
+						<div class="noUi-handle noUi-handle-lower">
+						</div>
+					</div>
+				</div>
+			</div>
 
 		</div>
 
-		<div class="current-track__options">
+		<div class="current-track__progress__finish">{{audio.duration}}</div>
 
-			<a href="#" class="lyrics">Lyrics</a>
+	</div>
 
-			<span class="controls">
-    
-      <a href="#" class="control">
-        <i class="ion-navicon"></i>
-      </a>
-      
-      <a href="#" class="control">
-        <i class="ion-shuffle"></i>
-      </a>
-      
-      <a href="#" class="control">
-        <i class="fa fa-refresh"></i>
-      </a>
-      
-      <a href="#" class="control devices">
-        <i class="ion-iphone"></i>
-        <span>Devices Available</span>
+	<div class="current-track__options">
+
+		<a href="#" class="lyrics">Lyrics</a>
+
+		<span class="controls">
+
+			<a href="#" class="control">
+				<i class="ion-navicon"></i>
+			</a>
+
+			<a href="#" class="control">
+				<i class="ion-shuffle"></i>
+			</a>
+
+			<a href="#" class="control">
+				<i class="fa fa-refresh"></i>
+			</a>
+
+			<a href="#" class="control devices">
+				<i class="ion-iphone"></i>
+				<span>Devices Available</span>
 			</a>
 
 			<a href="#" class="control volume">
@@ -371,11 +357,11 @@
 
 			</a>
 
-			</span>
+		</span>
 
-		</div>
+	</div>
 
-	</section>
+</section>
 
 </body>
 
