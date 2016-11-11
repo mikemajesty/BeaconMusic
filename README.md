@@ -1,10 +1,10 @@
 # BeaconMusic - Share the songs you love with the places you love
 
-###### See web Player [Tegra Beer](http://beer.dev.tegra.me/player/)
+###### See Web version [Tegra Beer](http://beer.dev.tegra.me/player/)
 
 [![app.png](https://s12.postimg.org/ajukz7nwt/app.png)](https://postimg.org/image/szf1wm215/)
 
-###### Mobile version
+###### See Mobile version [Tegra Beer](https://beer.dev.tegra.me/#/songs)
 
 [![appCel.png](https://s21.postimg.org/k7xgvn447/app_Cel.png)](https://postimg.org/image/v7io78uj7/)
 
