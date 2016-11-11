@@ -7,7 +7,7 @@ web:
   volumes:
     - .:/src
   ports:
-    - "8080:8080"
+    - "3000:8080"
   links:
     - mongo
 

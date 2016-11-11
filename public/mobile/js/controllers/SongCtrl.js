@@ -8,5 +8,7 @@ app.controller("SongCtrl", ["$scope", "$ionicSideMenuDelegate","$http", function
 
   $scope.addSong = function(song) {
     $http.post("/api/playlist", song);
+
+    alert("Música adicionada!");
   };
 }]);

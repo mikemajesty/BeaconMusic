@@ -5,3 +5,15 @@
   font-size: 13.2px;
   margin-bottom: 10px;
 }
+
+[nav-bar-transition="ios"] [nav-bar="active"] .bar {
+  background: #282828;
+}
+
+.bar.bar-light .title {
+  color: white;
+}
+
+.item {
+  padding-bottom: 0;
+}
