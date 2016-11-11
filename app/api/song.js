@@ -14,7 +14,7 @@ router.get('/', function (req, res) {
             name: "See emily play",
             artist: "Pink Floyd",
             url: "/mp3/102-pink_floyd-see_emily_play.mp3",
-            image: "https://upload.wikimedia.org/wikipedia/pt/e/e1/Echoes_best_pink_floyd.jpeg"
+            image: "https://s-media-cache-ak0.pinimg.com/236x/63/52/f6/6352f6ac1214f22da8b6c6ad1045742f.jpg"
         },
         {
             name: "The happiest days of our lives",
@@ -26,7 +26,7 @@ router.get('/', function (req, res) {
             name: "Another brick in the wall (part 2)",
             artist: "Pink Floyd",
             url: "/mp3/104-pink_floyd-another_brick_in_the_wall_(part_2).mp3",
-            image: "https://upload.wikimedia.org/wikipedia/pt/e/e1/Echoes_best_pink_floyd.jpeg"
+            image: "https://consequenceofsound.files.wordpress.com/2014/11/thewall.jpg%3Fw%3D806%26h%3D806"
         },
         {
             name: "Echoes",
@@ -44,18 +44,6 @@ router.get('/', function (req, res) {
             name: "Marooned",
             artist: "Pink Floyd",
             url: "/mp3/107-pink_floyd-marooned.mp3",
-            image: "https://upload.wikimedia.org/wikipedia/pt/e/e1/Echoes_best_pink_floyd.jpeg"
-        },
-        {
-            name: "The Great Gig In The Sky",
-            artist: "Pink Floyd",
-            url: "/mp3/108-pink_floyd-the_great_gig_in_the_sky.mp3",
-            image: "https://upload.wikimedia.org/wikipedia/pt/e/e1/Echoes_best_pink_floyd.jpeg"
-        },
-        {
-            name: "Set The Controls For The Heart Of The Sun",
-            artist: "Pink Floyd",
-            url: "/mp3/109-pink_floyd-set_the_controls_for_the_heart_of_the_sun.mp3",
             image: "https://upload.wikimedia.org/wikipedia/pt/e/e1/Echoes_best_pink_floyd.jpeg"
         },
         {
@@ -94,8 +82,6 @@ router.get('/', function (req, res) {
             url: "/mp3/i-remember-you-skid-row-guitar-cover.mp3",
             image: "https://i1.sndcdn.com/artworks-000033505878-lzcmn1-large.jpg"
         }
-
     ]);
 });
-
 module.exports = router;
