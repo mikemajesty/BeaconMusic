@@ -1,7 +1,7 @@
 <ion-view title="Tegra Beer" class="pane" >
   <ion-content class="has-header has-footer" >
     <ion-list can-swipe="listCanSwipe">
-      <ion-item ng-repeat="song in songs" class="item-thumbnail-left">
+      <ion-item ng-repeat="song in songs | orderBy : 'name'" class="item-thumbnail-left">
         <img ng-src="{{song.image}}">
         <h2 class="text-left">{{song.name}}</h2>
         <p>{{song.artist}}</p>

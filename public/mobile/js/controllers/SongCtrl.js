@@ -7,11 +7,6 @@ app.controller("SongCtrl", ["$scope", "$ionicSideMenuDelegate","$http", function
   $scope.listCanSwipe = true;
 
   $scope.addSong = function(song) {
-    console.log(song);
-    $http.post("/api/playlist", song).then(successCallback, errorCallback);
-  };
-  //Show right side menu
-  $scope.rightMenu = function() {
-    $ionicSideMenuDelegate.toggleRight();
+    $http.post("/api/playlist", song);
   };
 }]);
