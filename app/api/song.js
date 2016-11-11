@@ -63,7 +63,38 @@ router.get('/', function (req, res) {
             artist: "Pink Floyd",
             url: "/mp3/110-pink_floyd-money.mp3",
             image: "https://upload.wikimedia.org/wikipedia/pt/e/e1/Echoes_best_pink_floyd.jpeg"
+        },
+        {
+            name: "Stairway to Heaven",
+            artist: "Led Zeppelin",
+            url: "/mp3/Led_Zeppelin-Stairway_to_Heaven_Live.mp3",
+            image: "https://upload.wikimedia.org/wikipedia/en/2/26/Led_Zeppelin_-_Led_Zeppelin_IV.jpg"
+        },
+        {
+            name: "Iron Man",
+            artist: "Black Sabbath",
+            url: "/mp3/IronMan.mp3",
+            image: "https://s21.postimg.org/y22ikl0g7/capa_BS.jpg"
+        },
+        {
+            name: "Paranoid",
+            artist: "Black Sabbath",
+            url: "/mp3/Paranoid.mp3",
+            image: "https://s21.postimg.org/y22ikl0g7/capa_BS.jpg"
+        },
+        {
+            name: "The Number Of The Beast",
+            artist: "Iron Maiden",
+            url: "/mp3/iron_maiden__the_number_of_the_beast.mp3",
+            image: "https://upload.wikimedia.org/wikipedia/en/3/32/IronMaiden_NumberOfBeast.jpg"
+        },
+        {
+            name: "I Remember You",
+            artist: "Skid Row",
+            url: "/mp3/i-remember-you-skid-row-guitar-cover.mp3",
+            image: "https://i1.sndcdn.com/artworks-000033505878-lzcmn1-large.jpg"
         }
+
     ]);
 });
 
