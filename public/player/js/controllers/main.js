@@ -1,50 +1,27 @@
 angular.module('todoController', [])
 
-	// inject the Todo service factory into our controller
-	.controller('mainController', ['$scope','$http','Todos', function($scope, $http, Todos) {
-		$scope.formData = {};
+	.controller('mainController', ['$scope','$http', function($scope, $http) {
+		$scope.playlist = [
+			{
+				name: "Astronomy Domine",
+				artist: "Pink Floyd",
+				url: "/mp3/101-pink_floyd-astronomy_domine.mp3",
+				image: "https://upload.wikimedia.org/wikipedia/pt/e/e1/Echoes_best_pink_floyd.jpeg"
+			},
+		];
+
+		$scope.currentSong = -1;
+		$scope.audio = null;
 		$scope.loading = true;
 
-		// GET =====================================================================
-		// when landing on the page, get all todos and show them
-		// use the service to get all the todos
-		Todos.get()
-			.success(function(data) {
-				$scope.todos = data;
-				$scope.loading = false;
-			});
+		$scope.init = function() {
+			console.log("init");
+			if ($scope.currentSong < ($scope.playlist.length - 1)) {
+				$scope.currentSong++;
 
-		// CREATE ==================================================================
-		// when submitting the add form, send the text to the node API
-		$scope.createTodo = function() {
-
-			// validate the formData to make sure that something is there
-			// if form is empty, nothing will happen
-			if ($scope.formData.text != undefined) {
-				$scope.loading = true;
-
-				// call the create function from our service (returns a promise object)
-				Todos.create($scope.formData)
-
-					// if successful creation, call our get function to get all the new todos
-					.success(function(data) {
-						$scope.loading = false;
-						$scope.formData = {}; // clear the form so our user is ready to enter another
-						$scope.todos = data; // assign our new list of todos
-					});
+				$scope.audio = new Audio($scope.playlist[$scope.currentSong].url);
+				$scope.audio.play();
 			}
 		};
-
-		// DELETE ==================================================================
-		// delete a todo after checking it
-		$scope.deleteTodo = function(id) {
-			$scope.loading = true;
-
-			Todos.delete(id)
-				// if successful creation, call our get function to get all the new todos
-				.success(function(data) {
-					$scope.loading = false;
-					$scope.todos = data; // assign our new list of todos
-				});
-		};
+		$scope.init();
 	}]);
