@@ -615,14 +615,14 @@ body a:hover {
 .artist.is-verified .profile__img {
   position: relative;
 }
+
 .artist.is-verified .profile__img:after {
   font-family: "Ionicons";
-  content: "\f3fd";
+  content: "";
+  background-image: url(https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678063-beer-20.png);
   position: absolute;
   bottom: 5px;
   right: 25px;
-  color: white;
-  background: #4688d7;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -630,6 +630,7 @@ body a:hover {
   font-size: 18px;
   line-height: 1;
 }
+
 .artist__content {
   padding: 15px;
 }
