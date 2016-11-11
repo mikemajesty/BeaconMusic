@@ -1,4 +1,4 @@
-# BeaconMusic - Listen to your favorite songs in the places you like to go.
+# BeaconMusic - Share the songs you love with the places you love
 
 ###### See web Player [Tegra Beer](http://beer.dev.tegra.me/player/)
 
