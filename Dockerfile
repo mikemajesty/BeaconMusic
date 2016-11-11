@@ -12,6 +12,6 @@ WORKDIR /src
 
 RUN npm install node-sass
 
-EXPOSE 8080
+EXPOSE 3000
 
 CMD node server.js

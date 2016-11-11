@@ -11,6 +11,7 @@ angular.module('todoController', [])
 			duration: 0,
 			currentTime: 0
 		};
+
 		$scope.update = function() {
 			$http.get('/api/playlist').then(function(res) {
 				$scope.playlist = res.data;
@@ -28,9 +29,12 @@ angular.module('todoController', [])
 
 					$scope.audio.progress = (audio.currentTime / audio.duration) * 100;
 				}
+
+				$timeout($scope.update, 1000);
 			});
-			$timeout($scope.update, 2000);
+
 		};
+
 		$scope.paused = false;
 		$scope.pauseOrPlay = function(){
 			if (!$scope.paused) {
@@ -43,8 +47,6 @@ angular.module('todoController', [])
 				 document.getElementById("aplay").className = "ion-play";
 	    }
 		};
-
-
 
 		$scope.init = function() {
 			$timeout($scope.update, 2000);
