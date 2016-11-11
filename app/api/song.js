@@ -64,8 +64,7 @@ router.get('/', function (req, res) {
             url: "/mp3/110-pink_floyd-money.mp3",
             image: "https://upload.wikimedia.org/wikipedia/pt/e/e1/Echoes_best_pink_floyd.jpeg"
         }
-
     ]);
-}); 
+});
 
 module.exports = router;
