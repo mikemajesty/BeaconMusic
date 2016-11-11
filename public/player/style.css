@@ -1159,3 +1159,11 @@ button:hover {
   font-size: 13.2px;
   margin-bottom: 10px;
 }
+
+.artist__content {
+    width: 100%;
+}
+
+.content__middle {
+    width: 100%;
+}
