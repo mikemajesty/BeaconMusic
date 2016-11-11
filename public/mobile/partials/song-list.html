@@ -3,13 +3,14 @@
     <ion-list can-swipe="listCanSwipe">
       <ion-item ng-repeat="song in songs" class="item-thumbnail-left">
         <img ng-src="{{song.image}}">
-        <h2>{{song.name}}</h2>
+        <h2 class="text-left">{{song.name}}</h2>
         <p>{{song.artist}}</p>
-        <ion-option-button class="button-assertive" ng-click="addSong(song)">
-          Adicionar
-        </ion-option-button>
+        <div class="text-right">
+          <button side="right" class="button button-clear item-button-right">
+            <i class="icon ion-plus-round"></i>
+          </button>
+        </div>
       </ion-item>
     </ion-list>
   </ion-content>
-
 </ion-view>
