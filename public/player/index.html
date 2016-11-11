@@ -28,6 +28,7 @@
 	<script src="js/controllers/main.js"></script>
 
 	<script src="js/core.js"></script>
+
 </head>
 
 <body ng-controller="mainController">
@@ -123,7 +124,7 @@
 
 											<div class="track__number">{{$index + 1}}</div>
 											<div class="track__added">
-												<i class="ion-checkmark-round added"></i>
+												<i class="{{$index < currentSong ? 'ion-checkmark-round' : ($index == currentSong ? 'fa fa-play' : '')}} added"></i>
 											</div>
 											<div class="track__title">{{song.name}}</div>
 										</div>
@@ -296,11 +297,6 @@
 							</div>
 
 						</div>
-						<!-- / -->
-
-						<!-- About // Coming Soon-->
-						<!--<div role="tabpanel" class="tab-pane" id="artist-about">About</div>-->
-						<!-- / -->
 
 					</div>
 
@@ -329,7 +325,14 @@
 
 			<div class="current-track__progress__bar">
 
-				<div id="song-progress"></div>
+				<div id="song-progress" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
+					<div class="noUi-base">
+						<div class="noUi-origin" style="left: {{audio.progress}}%;">
+							<div class="noUi-handle noUi-handle-lower">
+							</div>
+						</div>
+					</div>
+				</div>
 
 			</div>
 

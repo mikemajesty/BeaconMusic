@@ -1,27 +1,45 @@
 angular.module('todoController', [])
 
-	.controller('mainController', ['$scope','$http', function($scope, $http) {
-		$scope.playlist = [
-			{
-				name: "Astronomy Domine",
-				artist: "Pink Floyd",
-				url: "/mp3/101-pink_floyd-astronomy_domine.mp3",
-				image: "https://upload.wikimedia.org/wikipedia/pt/e/e1/Echoes_best_pink_floyd.jpeg"
-			},
-		];
-
+	.controller('mainController', ['$scope','$http', '$timeout', function($scope, $http, $timeout) {
+		
+		var audio = null;
+		
+		$scope.playlist = [];
 		$scope.currentSong = -1;
-		$scope.audio = null;
 		$scope.loading = true;
+		$scope.audio = {
+			progress: 0,
+			duration: 0,
+			currentTime: 0
+		}
+
+		$scope.update = function() {
+			$http.get('/api/playlist').then(function(res) {
+				$scope.playlist = res.data;
+
+				if (audio === null || audio.ended) {
+					if ($scope.currentSong < ($scope.playlist.length - 1)) {
+						$scope.currentSong++;
+
+						audio = new Audio($scope.playlist[$scope.currentSong].url);
+						audio.play();
+
+						
+					}
+				} else {
+					$scope.audio.currentTime = parseInt(audio.currentTime / 60) +  ":" + parseInt(audio.currentTime % 60);
+					$scope.audio.duration = parseInt(audio.duration / 60) +  ":" + parseInt(audio.duration % 60);
+
+					$scope.audio.progress = (audio.currentTime / audio.duration) * 100;
+				}
+			});
+
+			$timeout($scope.update, 2000);
+		};
 
 		$scope.init = function() {
-			console.log("init");
-			if ($scope.currentSong < ($scope.playlist.length - 1)) {
-				$scope.currentSong++;
-
-				$scope.audio = new Audio($scope.playlist[$scope.currentSong].url);
-				$scope.audio.play();
-			}
+			$timeout($scope.update, 2000);
 		};
+
 		$scope.init();
 	}]);
