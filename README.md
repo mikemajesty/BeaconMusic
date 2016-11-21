@@ -1,6 +1,6 @@
 # BeaconMusic - Share the songs you love with the places you love
 
-###### See Web version [Tegra Beer](https://beacon-music-pub.herokuapp.com/player/)
+###### See Web version [Tegra Beer](http://beacon-music-pub.herokuapp.com/player/)
 
 [![app.png](https://s12.postimg.org/ajukz7nwt/app.png)](https://postimg.org/image/szf1wm215/)
 
