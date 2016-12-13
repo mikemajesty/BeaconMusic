@@ -21,3 +21,15 @@ version": "1.2.16"
 It is available under the MIT license.
 [License](http://opensource.org/licenses/mit-license.php)
 
+<hr>
+
+### Collaborators
+
+* [mikemajesty](https://github.com/mikemajesty) -
+**Mike Lima** &lt;mikee_2008@hotmail.com&gt;
+* [celso-wo](https://github.com/celso-wo) -
+**Celso Wo** &lt;celsowo@gmail.com&gt;
+* [wduqu001](https://github.com/wduqu001) -
+**Willian Duque** &lt;wduqu001@gmail.com&gt;
+
+
