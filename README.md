@@ -31,5 +31,3 @@ It is available under the MIT license.
 **Celso Wo** &lt;celsowo@gmail.com&gt;
 * [wduqu001](https://github.com/wduqu001) -
 **Willian Duque** &lt;wduqu001@gmail.com&gt;
-
-
